@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import NotFound from "./pages/NotFound";
+import PageLayout from "./components/Layout/PageLayout";
 
 const queryClient = new QueryClient();
 
@@ -19,12 +20,12 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/" element={<PageLayout><Index /></PageLayout>} />
+          <Route path="/about" element={<PageLayout><About /></PageLayout>} />
+          <Route path="/services" element={<PageLayout><Services /></PageLayout>} />
+          <Route path="/portfolio" element={<PageLayout><Portfolio /></PageLayout>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<PageLayout><NotFound /></PageLayout>} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
