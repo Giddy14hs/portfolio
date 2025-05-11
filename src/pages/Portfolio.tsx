@@ -1,7 +1,5 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
-import PageLayout from "@/components/Layout/PageLayout";
 import SectionHeading from "@/components/SectionHeading";
 import ProjectCard from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
@@ -80,7 +78,7 @@ const PortfolioPage = () => {
       : projects.filter((project) => project.category === activeCategory);
 
   return (
-    <PageLayout>
+    <>
       <section className="bg-gradient-to-b from-background to-muted/20 py-16 md:py-24">
         <div className="container mx-auto px-4">
           <SectionHeading
@@ -128,7 +126,7 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="bg-gradient-to-tr from-primary/10 via-purple-500/10 to-primary/10 py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-6 text-3xl font-bold">Interested in my work?</h2>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
@@ -143,7 +141,7 @@ const PortfolioPage = () => {
           </a>
         </div>
       </section>
-    </PageLayout>
+    </>
   );
 };
 

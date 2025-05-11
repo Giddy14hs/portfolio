@@ -1,4 +1,3 @@
-
 import {
   Code,
   Database,
@@ -10,7 +9,6 @@ import {
   Smartphone,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import PageLayout from "@/components/Layout/PageLayout";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 
@@ -67,101 +65,23 @@ const ServicesPage = () => {
   ];
 
   return (
-    <PageLayout>
+    <>
       <section className="bg-gradient-to-b from-background to-muted/20 py-16 md:py-24">
         <div className="container mx-auto px-4">
           <SectionHeading
             title="My Services"
-            subtitle="Comprehensive solutions for your digital needs"
+            subtitle="What I can do for your next project"
           />
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <motion.div
+            {services.map((service) => (
+              <ServiceCard
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <ServiceCard
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                />
-              </motion.div>
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+              />
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            title="My Approach"
-            subtitle="How I work to deliver exceptional results"
-          />
-
-          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="rounded-lg bg-card p-6 shadow-sm"
-            >
-              <h3 className="mb-4 text-xl font-semibold">Discovery Phase</h3>
-              <p>
-                I begin each project with a thorough understanding of your goals,
-                target audience, and business needs. This helps me create solutions
-                that not only look great but also achieve your objectives.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-lg bg-card p-6 shadow-sm"
-            >
-              <h3 className="mb-4 text-xl font-semibold">Planning & Design</h3>
-              <p>
-                After gathering requirements, I create wireframes and prototypes to
-                visualize the solution before any coding begins. This ensures we're
-                aligned on the direction before investing in development.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="rounded-lg bg-card p-6 shadow-sm"
-            >
-              <h3 className="mb-4 text-xl font-semibold">Development</h3>
-              <p>
-                I focus on writing clean, efficient, and maintainable code using
-                modern development practices. Regular updates and collaboration
-                ensure you're always informed about progress.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="rounded-lg bg-card p-6 shadow-sm"
-            >
-              <h3 className="mb-4 text-xl font-semibold">Testing & Launch</h3>
-              <p>
-                Rigorous testing across different devices and browsers ensures your
-                project works flawlessly for all users. After launch, I provide
-                support to address any issues and help with future enhancements.
-              </p>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -190,7 +110,7 @@ const ServicesPage = () => {
           </motion.div>
         </div>
       </section>
-    </PageLayout>
+    </>
   );
 };
 

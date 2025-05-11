@@ -46,13 +46,13 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
                 <a href="mailto:contact@example.com" className="hover:text-primary transition-colors">
-                  contact@example.com
+                  lemisogideon@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
                 <a href="tel:+1234567890" className="hover:text-primary transition-colors">
-                  +123 456 7890
+                  +254 745 113 186
                 </a>
               </div>
             </div>
@@ -61,7 +61,7 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-2">Follow</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/gideon-lemiso-618761321"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-primary transition-colors"
@@ -70,7 +70,7 @@ const Footer = () => {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Giddy14hs"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-primary transition-colors"
@@ -79,7 +79,7 @@ const Footer = () => {
                   <Github className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/home"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-primary transition-colors"
@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 border-t border-border pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Gideon's Portfolio. All rights reserved.</p>
         </div>
       </div>
     </footer>

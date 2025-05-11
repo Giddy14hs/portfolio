@@ -1,7 +1,5 @@
-
 import { CodeIcon, PaletteIcon, ServerIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import PageLayout from "@/components/Layout/PageLayout";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -35,134 +33,86 @@ const Index = () => {
     {
       quote:
         "Working with this developer was a game-changer for our project. The attention to detail and technical expertise delivered amazing results.",
-      author: "Jane Smith",
-      role: "CEO, Tech Solutions",
+      author: "Brian",
+      role: "Lead Physiotherapist",
     },
     {
       quote:
         "Incredibly talented and professional. The final website exceeded our expectations and has significantly improved our online presence.",
-      author: "Alex Johnson",
-      role: "Marketing Director, CreativeHub",
+      author: "Esther",
+      role: "CEO, Brighter-World Programme",
     },
   ];
 
   return (
-    <PageLayout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-background to-muted/20 py-24 md:py-32">
+    <>
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col-reverse items-center justify-between gap-12 md:flex-row">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="md:w-1/2"
-            >
-              <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-                Turning Ideas into{" "}
+          <div className="grid gap-12 md:grid-cols-2">
+            <div className="flex flex-col justify-center">
+              <h1 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
+                Building Digital
                 <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-                  Digital Reality
+                  {" "}
+                  Experiences{" "}
                 </span>
+                That Matter
               </h1>
-              <p className="mb-8 text-lg text-muted-foreground md:pr-12">
-                I'm a full-stack developer specializing in building exceptional
-                digital experiences that are fast, accessible, and visually
-                appealing.
+              <p className="mb-8 text-lg text-muted-foreground">
+                I'm a full-stack developer passionate about creating beautiful and
+                functional web applications. Let's work together to bring your
+                ideas to life.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex gap-4">
                 <Button asChild size="lg">
                   <Link to="/portfolio">View My Work</Link>
                 </Button>
-                <Button variant="outline" asChild size="lg">
-                  <Link to="/contact">Contact Me</Link>
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/contact">Get In Touch</Link>
                 </Button>
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="md:w-1/2"
-            >
-              <div className="rounded-lg bg-gradient-to-tr from-primary/20 to-purple-500/20 p-2">
-                <AnimatedImage
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-                  alt="Developer workspace"
-                  className="rounded-md"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            title="About Me"
-            subtitle="Learn a bit about who I am and what drives me"
-          />
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-6 text-lg">
-              I'm a passionate full-stack developer with expertise in creating
-              modern web applications. I love solving complex problems and
-              turning ideas into reality through clean, efficient code and
-              thoughtful design.
-            </p>
-            <Button asChild>
-              <Link to="/about">More About Me</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="bg-muted/20 py-20">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            title="My Services"
-            subtitle="What I can do for your next project"
-          />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard
-                key={service.title}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
+            </div>
+            <div className="relative">
+              <AnimatedImage
+                src="/hero-image.jpg"
+                alt="Developer working on laptop"
+                className="rounded-lg"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-muted/40 py-24">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="Services"
+            description="What I can do for you"
+            className="mb-12"
+          />
+          <div className="grid gap-8 md:grid-cols-3">
+            {services.map((service, index) => (
+              <ServiceCard key={index} {...service} />
             ))}
           </div>
-          <div className="mt-12 text-center">
-            <Button asChild>
-              <Link to="/services">All Services</Link>
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Testimonials"
-            subtitle="What clients and colleagues say about my work"
+            description="What my clients say"
+            className="mb-12"
           />
-          <div className="grid gap-6 md:grid-cols-2">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard
-                key={testimonial.author}
-                quote={testimonial.quote}
-                author={testimonial.author}
-                role={testimonial.role}
-              />
+          <div className="grid gap-8 md:grid-cols-2">
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard key={index} {...testimonial} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="bg-gradient-to-tr from-primary/10 via-purple-500/10 to-primary/10 py-24">
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-6 text-3xl font-bold md:text-4xl">
@@ -177,7 +127,7 @@ const Index = () => {
           </Button>
         </div>
       </section>
-    </PageLayout>
+    </>
   );
 };
 

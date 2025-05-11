@@ -1,5 +1,3 @@
-
-import PageLayout from "@/components/Layout/PageLayout";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedImage from "@/components/AnimatedImage";
 import { motion } from "framer-motion";
@@ -43,7 +41,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <PageLayout>
+    <>
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <SectionHeading title="About Me" subtitle="Get to know me better" />
@@ -95,27 +93,28 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="bg-muted/20 py-16">
+      <section className="bg-muted/40 py-16">
         <div className="container mx-auto px-4">
           <SectionHeading
-            title="My Skills"
-            subtitle="Technologies and tools I work with"
+            title="Skills & Expertise"
+            subtitle="What I bring to the table"
           />
 
-          <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4 md:grid-cols-3">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="flex items-center gap-2 rounded-lg bg-card p-3 shadow-sm"
-              >
-                <CheckCircle className="h-5 w-5 text-primary" />
-                <span>{skill}</span>
-              </motion.div>
-            ))}
+          <div className="mx-auto max-w-3xl">
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+              {skills.map((skill) => (
+                <motion.div
+                  key={skill}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-2 rounded-lg bg-background p-4 shadow-sm"
+                >
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>{skill}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -153,7 +152,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-    </PageLayout>
+    </>
   );
 };
 
